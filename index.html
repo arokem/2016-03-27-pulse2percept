@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pulse2Percept</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: "Encode Sans Normal", serif }
+      h1, h2, h3 {
+        font-family: 'Encode Sans Normal';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-container {transition: opacity 0.5s ease-out;opacity: 0;}
+      .remark-visible {transition: opacity 0.5s ease-out;opacity: 1;}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+      class: center, middle
+
+      ### **`pulse2percept`: models for retinal prosthetics**
+      ### **Winter 2016 Data Science Incubator**
+
+      #### **The University of Washington eScience Institute**
+
+      ### Ariel Rokem
+
+      <image src="images/eScience_Logo_RGB_PP.png">
+
+      <small>Follow along at: <a href="http://arokem.github.io/2016-03-27-pulse2percept">arokem.github.io/2016-03-27-pulse2percept</a></small>
+
+      ???
+
+      Hi! I am going to tell you a little bit about the outcomes of one of our data science incubator projects from the
+
+      I will also talk a little bit about how we plan to continue this collaboration moving forward, with a post-doc funded jointly by the eScience fellowship and the UWIN fellowship
+
+      ---
+
+      layout: true
+
+      <div style="position: absolute; left: 650px; top: 370px;">
+      <image src="images/escience-network.png" width=500px style="opacity:0.4;filter:alpha(opacity=40);"> </div>
+
+      ---
+
+
+      ### Data Science Incubator
+
+      --
+
+      Focused, intensive collaborative projects
+
+      --
+
+      Quarter-long
+
+      --
+
+      Data scientists and domain researchers work side-by-side
+
+      --
+
+      Researchers from departments across the university apply to participate.
+
+      --
+
+      Just finished our <a href="http://escience.washington.edu/get-involved/incubator-programs/winter-2016/">third cohort</a> of projects.
+
+      ???
+      As part of our effort to reach out to the campus community and collaborate with researchers from a wide range of fields, departments and institutes on campus, the incubator projects offer the possibility for a researcher or researchers to work together with us on a quarter-long. During the course of the quarter, we work together with the researchers shoulder-to-shoulder to implement the software needed.
+
+      We recently had the finishing presentations of the Winter Incubator. Many researchers who participated found it to be a highly productive : "I did more in these 10 weeks than I would be able to do on my own in a year!"
+
+      I'll show you one example of such a project
+      ---
+
+      ### Example incubator project
+
+      #### Pulse-trains to percepts : models for retinal prosthetics
+
+      Winter 2016
+
+      With <a href="http://faculty.washington.edu/ionefine/">Ione Fine</a> and <a href="http://faculty.washington.edu/gboynton/">Geoff Boynton</a>, Department of Psychology
+
+      ---
+
+      
+      ---
+
+      ### Retinal Prosthetics
+
+      <image height=60% src="images/retina-with-implants.png">
+
+      ---
+
+      ### Retinal Prosthetics
+
+      <image height=60% src="images/retinal-prosthetic-photo.png">
+
+      ---
+
+      ### Retinal Prosthetics
+
+      <image height=40% src="images/retinal-prosthetic1.png">
+
+      ---
+
+      ### Models: from pulse to percept
+
+      <image height="30%" src="images/cascade-model.png">
+
+      <small> Greenwald et al. (2009), Horsager et al. (2009, 2010, 2011), Nanduri et al. (2011, 2013)</small>
+      ---
+
+      ### Software: from pulse to percept
+
+      <image height="30%" src="images/cascade-model.png">
+
+      Implemented as open-source software: http://github.com/uwescience/pulse2percept
+
+      --
+
+      Technical challenge:
+
+      --
+
+      - Retina modeled at 25 `\(\mu m\)` resolution
+
+      --
+
+      - Pulse-trains modeled at 5 `\(\mu sec\)` resolution
+
+      --
+
+      - 3 second movie `\(\rightarrow \)`  `\(7.5 x 10^{12}\)` elements
+
+      --
+
+      #### Solution: parallelize and compute on Amazon Web Services
+
+      ---
+
+      ### A "virtual patient"
+
+      <video width="60%" height="auto" autoplay loop muted="muted"><source src="./videos/girlJumpsInPool.mov
+      "/> </video>
+
+
+      ---
+
+      ### A "virtual patient"
+
+      <video width="60%" height="auto" autoplay loop ><source src="./videos/girlJumpsInPool_percept_lambda6_ampmax_5.mov
+      "/> </video>
+
+      ---
+
+      ### A "virtual patient"
+
+      <video muted="muted" width="60%" height="auto" autoplay loop ><source src="./videos/platformBostonT.mov
+      "/> </video>
+
+      ---
+
+      ### A "virtual patient"
+
+      <video  width="60%" height="auto" autoplay loop ><source src="./videos/platformBostonT_percept_lambda6_ampmax_5.mov
+      "/> </video>
+
+      ---
+
+
+      ### Data Science for Social Good
+
+      Addresses two additional challenges:
+
+      ???
+
+      Another form of our incubator projects is our Data Science for Social Good Program (or DSSG). This program addresses two major challenges.
+      --
+
+      How do we provide training for data-scientists interested in social good?
+
+      ???
+      The first is the education of data-scientists, especially in the social sciences, and fields that pertain to social good
+      --
+
+      How do we enable data-driven approaches in institutions devoted to social good?
+
+      ???
+      The other is our ability to provide solutions to "real-world" problems outside the university.
+
+      --
+
+      <a href="http://urban.uw.edu/">Urban at UW
+      <image src="images/UrbanatUW-Seattle-World.png">
+      </a>
+
+      ???
+      This project also dovetails with Urban at UW, an initiative of the office of research and CoMotion. This initiative treats the city in much the same way that precision medicine, aiming to promote social justice, livability and sustainability of the city, through the use of data.
+
+      Inspired by similar programs at the University of Chicago, and in the Atlanta Region, we initiated this program last summer.
+      ---
+
+      ### DSSG @ UW eScience 2015
+
+      --
+
+      16 student fellows
+
+      --
+
+      4 projects
+
+      --
+
+      Project leads from UW and from non-profit organizations in the region
+
+      --
+
+      ???
+      The program consisted of 16 student-fellows, who, in teams of 4 pursued 4 different projects aimed at social good
+
+      ---
+
+      #### Rerouting Solutions and Expensive Ride Analysis for King County Paratransit
+
+      Optimizing routing to reduce costs and develop tools to aid route planning
+
+      <image height="40%" src="images/paratransit-bus.png">
+
+      In collaboration with the <a href="https://tcat.cs.washington.edu/">Taskar Center for Accessible Technologies</a>
+      ---
+
+      #### Rerouting Solutions and Expensive Ride Analysis for King County Paratransit
+
+      Optimizing routing to reduce costs and develop tools to aid route planning
+
+      <image height="70%" src="images/paratransit1.png">
+
+      ---
+
+      #### Open Sidewalk Graph for Accessible Trip Planning
+
+      Connecting open sidewalk data through computational geometry
+
+      <image src="images/sidewalk-cleaning.png" height="40%">
+
+      In collaboration with the <a href="https://tcat.cs.washington.edu/">Taskar Center for Accessible Technologies</a>
+      ---
+
+      #### Assessing Community Well-being through Open Data and Social Media
+
+      Creating a score-card for neighborhoods based on open data
+
+      <image src="images/report_page.png" height="40%">
+
+      In collaboration with <a href="http://thirdplacetechnologies.com/">Third Place Technologies</a>
+
+      ---
+
+      #### Family homelessness: factors leading to permanent housing
+
+      Family Trajectories through Programs
+
+      <image height="35%" src="images/PierceTrajectories.png">
+
+      ---
+
+      ### DSSG @ UW eScience in 2016!
+
+      **Now accepting appplications for projects until March 30th**
+
+      <a href="http://escience.washington.edu/dssg-proposal">http://escience.washington.edu/dssg-proposal</a>
+
+      ???
+
+      We are very excited to welcome a new cohort of DSSG fellows and projects this summer. Applications to participate as students have already closed (in fact, we are currently reviewing the more than 200 applications to participate!), but we are still soliciting applications for project proposals. Please spread the word about this program to your friends and colleagues on campus and beyond.
+      ---
+
+      ### The future is already here
+
+      --
+
+      ### ... it's just not very evenly distributed.
+                                                    (William Gibson)
+
+      ???
+
+      ... the future is already here (click). It's just not very evenly distributed.
+
+      --
+
+        - Catalyzing collaborations
+
+      --
+
+        - Building and maintaining the tools
+
+      --
+
+        - Sustaining career paths in data-intensive research
+
+      --
+
+      - Training data-savvy researchers
+
+      ---
+
+      ### Come talk to us!
+
+      <image height="40%" src="images/eScience_Logo_RGB_PP.png">
+
+      The eScience Institute will have a table later today
+
+      --
+
+      Come to our <a href="http://escience.washington.edu/office-hours/">office hours</a> at the DSS!
+
+      ---
+      class: center
+      layout: false
+
+      ### Stay in touch!
+
+      <div style="position:absolute; left: 220px; top:100px;">
+        <img src="images/globe-xxl.png" width="100px;" style="background:none; border:none; box-shadow:none;">
+        <div style="position:absolute; left: 120px; top:40px;">http://arokem.org
+        </div>
+      </div>
+      <div style="position:absolute; left: 220px; top:220px;">
+        <img src="images/email-11-xxl.png" width="100px;" style="background:none; border:none; box-shadow:none;">
+        <div style="position:absolute; left: 120px; top:40px;">arokem@gmail.com
+        </div>
+      </div>
+      <div style="position:absolute; left: 220px; top:340px;">
+        <img src="images/twitter-xxl.png" width="100px;" style="background:none; border:none; box-shadow:none;">
+        <div style="position:absolute; left: 120px; top:40px;">@arokem
+        </div>
+      </div>
+      <div style="position:absolute; left: 220px; top:460px;">
+        <img src="images/github-6-xxl.png" width="100px;" style="background:none; border:none; box-shadow:none;">
+        <div style="position:absolute; left: 120px; top:40px;">github.com/arokem
+        </div>
+      </div>
+
+
+
+      ---
+
+      ### Retinal Prosthetics
+
+      <image height="30%" src="images/paired-pulse-grid.png">
+
+      ---
+
+      ### Retinal Prosthetics
+
+      <image height="30%" src="images/paired-pulse-scoreboard-model.png">
+
+      ---
+
+      ### Retinal prosthetics:
+
+      <image height=40% src="images/paired-stimulation-percept.png">
+
+      ---
+
+      ### Retinal prosthetics: problems with the score-board model
+
+      <image height=40% src="images/paired-stimulation-w-oyster.png">
+
+
+
+
+
+    </textarea>
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+
+    <script src="remark-latest.min.js">
+    </script>
+
+    <script>
+    var slideshow = remark.create({
+      navigation: {click: false, scroll: false},
+      properties: {class: "center, middle"},
+      countIncrementalSlides: false
+                                  });
+
+    // Setup MathJax
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+            return(elem.SourceElement());
+        }).parent().addClass('has-jax');
+    });
+
+    MathJax.Hub.Configured();
+    </script>
+  </body>
+</html>
